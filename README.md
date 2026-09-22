@@ -1,4 +1,5 @@
 # GenSports
+<<<<<<< HEAD
 
 Landing page responsive para GenSports, una tienda deportiva tipo outlet.
 
@@ -36,3 +37,4 @@ Este proyecto fue desarrollado de manera colaborativa durante un hackatón.
 - Mara
 - Ángel
 - Álvaro
+=======
