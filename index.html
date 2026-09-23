@@ -15,6 +15,7 @@
 
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/oferta-hero.css">
 </head>
 
 <body>
@@ -94,32 +95,67 @@
         <div id="contenido-carrito" class="oculto"></div>
     </header>
 
+    <!-- Oferta sticky: fuera de main para acompañar el scroll de la página. -->
+    <aside id="contadorOferta" class="gs-oferta" aria-label="Oferta flash">
+        <div class="gs-oferta-contenido">
+            <div class="gs-oferta-texto"><span class="gs-rayo" aria-hidden="true">ϟ</span><div><span class="gs-oferta-titulo">OFERTA FLASH</span><strong>30% DE DESCUENTO</strong></div></div>
+            <div class="gs-reloj" role="timer" aria-label="Tiempo restante de la oferta">
+                <div><span id="horas">01</span><small>HRS</small></div><b>:</b>
+                <div><span id="minutos">30</span><small>MIN</small></div><b>:</b>
+                <div><span id="segundos">00</span><small>SEG</small></div>
+            </div>
+            <a class="gs-boton gs-aprovechar" href="#productos">Aprovechar</a>
+        </div>
+        <div class="gs-efectos" aria-hidden="true"></div>
+    </aside>
+
+
 
     <!-- Hero -->
     <main>
 
-        <section id="inicio" class="hero">
-
-            <div class="hero-contenido">
-
-                <p>ENTRENA. SUPERA. CONQUISTA.</p>
-
-                <h1>
-                    No Human is Limited
-                </h1>
-
-                <p>
-                    Encuentra el equipamiento que necesitas
-                    para llevar tu rendimiento al siguiente nivel.
-                </p>
-
-                <a href="#productos" class="btn">
-                    Ver productos
-                </a>
-
+        <section id="inicio" class="gs-hero" aria-labelledby="gs-titulo">
+    <div class="gs-presentacion">
+        <span class="gs-etiqueta">EQUÍPATE PARA TU PRÓXIMO RETO</span>
+        <h1 id="gs-titulo">Muévete a <span>tu manera.</span></h1>
+        <p>Encuentra el equipo que te acompaña en cada partido, entrenamiento y kilómetro.</p>
+        <a class="gs-boton" href="#productos">Explorar productos →</a>
+    </div>
+    <div class="gs-carrusel" role="region" aria-roledescription="carrusel" aria-label="Productos deportivos">
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 5: Fútbol" >
+            <div class="gs-imagen"><img src="./img/futbol.jpg" alt="Fútbol" ></div>
+            <div class="gs-info"><span>FÚTBOL</span><h2>Domina la cancha</h2><p>Prepárate para darlo todo en cada partido.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 5: Básquetbol" hidden>
+            <div class="gs-imagen"><img src="./img/basquetbol.jpg" alt="Básquetbol" loading="lazy"></div>
+            <div class="gs-info"><span>BÁSQUETBOL</span><h2>Haz que cada tiro cuente</h2><p>Da tu mejor juego en la cancha.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 5: Fútbol americano" hidden>
+            <div class="gs-imagen"><img src="./img/americano.jpg" alt="Fútbol americano" loading="lazy"></div>
+            <div class="gs-info"><span>FÚTBOL AMERICANO</span><h2>Avanza en cada jugada</h2><p>Pasión y energía hasta la última yarda.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 5: Running" hidden>
+            <div class="gs-imagen"><img src="./img/running.jpg" alt="Running" loading="lazy"></div>
+            <div class="gs-info"><span>RUNNING</span><h2>Encuentra tu ritmo</h2><p>Cada kilómetro empieza con un primer paso.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 5: Calzado deportivo" hidden>
+            <div class="gs-imagen"><img src="./img/hero.jpg" alt="Calzado deportivo" loading="lazy"></div>
+            <div class="gs-info"><span>CALZADO DEPORTIVO</span><h2>Prepárate para tu próximo reto</h2><p>Encuentra el calzado para tus entrenamientos.</p></div>
+        </article>
+        <div class="gs-controles">
+            <button class="gs-flecha" type="button" data-gs-anterior aria-label="Producto anterior">←</button>
+            <div class="gs-indicadores" role="group" aria-label="Elegir producto">
+                <button type="button" class="gs-indicador" aria-label="Mostrar Fútbol" aria-current="true"></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Básquetbol" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Fútbol americano" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Running" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Calzado deportivo" ></button>
             </div>
-
-        </section>
+            <button class="gs-flecha" type="button" data-gs-siguiente aria-label="Producto siguiente">→</button>
+        </div>
+        <p class="gs-sr" data-gs-estado aria-live="polite" aria-atomic="true"></p>
+    </div>
+</section>
 
         <!-- Deposrtes -->
         <section id="deportes">
@@ -154,7 +190,7 @@
             </div>
         </section>
 
-        <!---Nueva ventana de productos--->>
+        <!-- Nueva ventana de productos -->
         <div id="vista-producto" class="vista-producto oculto">
             <div id="cerrar-vista" class="cerrar-vista">&times;</div>
 
@@ -206,7 +242,7 @@
 
                         <p>
                             Recibe tus productos en poco tiempo y prepárate
-                            para alcanzar tus objetivos.
+                            para alcanzar tus objetivos.   
                         </p>
                     </article>
                 </div>
@@ -392,6 +428,7 @@
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     <footer id="footer" class="footer-sport">
         <div class="container">
@@ -544,6 +581,7 @@
     </script>
 
     <script src="./js/main.js"></script>
+    <script src="./js/oferta-hero.js"></script>
 
 </body>
 
