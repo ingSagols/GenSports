@@ -1,5 +1,5 @@
 /* =====================================================
-   PALETA DE COLORES GENSPORTS
+   GENSPORTS - VARIABLES
 ===================================================== */
 
 :root {
@@ -12,22 +12,184 @@
     --gris-suave: #E5E7EB;
     --gris-medio: #6B7280;
     --gris-oscuro: #374151;
+    --gris-fondo: #F8FAFC;
+
+    --header-altura: 80px;
 }
 
 
 /* =====================================================
-   ESTILOS GENERALES
+   RESET GENERAL
 ===================================================== */
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #222;
+    min-width: 320px;
+    margin: 0;
+    overflow-x: hidden;
+    background-color: var(--gris-fondo);
+    color: var(--negro-carbon);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
 }
 
 
 /* =====================================================
-   ALERTA INICIAL DEL SORTEO
+   HEADER Y NAVEGACIÓN
+===================================================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--negro-carbon);
+    color: var(--blanco);
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    max-width: 1200px;
+    min-height: var(--header-altura);
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+.logo-header {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.logo-header img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu-principal {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menu-principal a {
+    color: var(--blanco);
+    font-size: 0.92rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.menu-principal a:hover {
+    color: var(--verde-lima);
+}
+
+#carrito {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-width: 45px;
+    min-height: 40px;
+    border: 1px solid var(--verde-lima);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--blanco);
+}
+
+#carrito:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+}
+
+#contador-carrito {
+    color: var(--verde-lima);
+    font-weight: 800;
+}
+
+#carrito:hover #contador-carrito {
+    color: var(--negro-carbon);
+}
+
+#contenido-carrito {
+    position: absolute;
+    top: var(--header-altura);
+    right: 20px;
+    z-index: 1001;
+    width: min(320px, calc(100% - 40px));
+    padding: 20px;
+    border-radius: 12px;
+    background-color: var(--negro-carbon);
+    color: var(--blanco);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.oculto {
+    display: none;
+}
+
+
+/* =====================================================
+   LOGOTIPOS
+===================================================== */
+
+.logo-modal {
+    margin-bottom: 20px;
+}
+
+.logo-modal img {
+    width: 135px;
+    height: auto;
+    object-fit: contain;
+}
+
+.logo-suscripcion {
+    margin-bottom: 24px;
+}
+
+.logo-suscripcion img {
+    width: 145px;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+
+/* =====================================================
+   MODAL DEL SORTEO
 ===================================================== */
 
 .modal-sorteo {
@@ -38,9 +200,6 @@ body {
     color: var(--blanco);
     box-shadow: 0 0 40px rgba(20, 85, 217, 0.45);
 }
-
-
-/* Imagen lateral */
 
 .imagen-sorteo {
     min-height: 430px;
@@ -54,21 +213,17 @@ body {
     object-fit: cover;
 }
 
-
-/* Contenido de la alerta */
-
 .contenido-sorteo {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 45px 38px;
-    background:
-        linear-gradient(
-            135deg,
-            var(--negro-carbon),
-            #1F2937
-        );
+    background: linear-gradient(
+        135deg,
+        var(--negro-carbon),
+        #1F2937
+    );
 }
 
 .boton-cerrar-superior {
@@ -130,9 +285,6 @@ body {
     margin-top: 12px;
 }
 
-
-/* Botón para participar */
-
 .btn-participar {
     border: 2px solid var(--verde-lima);
     background-color: var(--verde-lima);
@@ -148,16 +300,653 @@ body {
 
 
 /* =====================================================
-   SECCIÓN DE BENEFICIOS
+   OFERTA STICKY
+===================================================== */
+
+.gs-oferta {
+    position: sticky;
+    top: calc(var(--header-altura) + 10px);
+    z-index: 999;
+    width: min(900px, calc(100% - 24px));
+    margin: 16px auto;
+    border: 2px solid var(--azul-electrico);
+    border-radius: 18px;
+    background-color: var(--blanco);
+    color: var(--negro-carbon);
+    box-shadow: 0 8px 25px rgba(17, 24, 39, 0.1);
+    transition:
+        width 0.3s ease,
+        border-radius 0.3s ease;
+}
+
+.gs-oferta-contenido {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+}
+
+.gs-oferta-texto {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gs-oferta-texto strong {
+    display: block;
+    font-size: 16px;
+}
+
+.gs-rayo {
+    color: var(--azul-electrico);
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.gs-oferta-titulo {
+    display: block;
+    color: var(--azul-electrico);
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.gs-reloj {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-variant-numeric: tabular-nums;
+}
+
+.gs-reloj > div {
+    min-width: 38px;
+    text-align: center;
+}
+
+.gs-reloj span {
+    display: block;
+    color: var(--negro-carbon);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.gs-reloj small {
+    display: block;
+    color: var(--negro-carbon);
+    font-size: 9px;
+}
+
+.gs-reloj b {
+    color: var(--azul-electrico);
+}
+
+.gs-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 22px;
+    border: 0;
+    border-radius: 28px;
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+    font-weight: bold;
+    text-decoration: none;
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.gs-boton:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+    transform: translateY(-2px);
+}
+
+.gs-aprovechar {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+    font-size: 13px;
+}
+
+.gs-aprovechar:hover {
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+}
+
+.gs-oferta.compacto {
+    width: min(530px, calc(100% - 24px));
+    border-radius: 28px;
+}
+
+.gs-oferta.compacto .gs-oferta-contenido {
+    gap: 10px;
+    padding: 9px 14px;
+}
+
+.gs-oferta.compacto .gs-oferta-titulo,
+.gs-oferta.compacto small {
+    display: none;
+}
+
+.gs-oferta.compacto strong {
+    font-size: 13px;
+}
+
+.gs-oferta.compacto .gs-reloj span {
+    font-size: 18px;
+}
+
+.gs-oferta.compacto .gs-reloj > div {
+    min-width: 25px;
+}
+
+.gs-efectos {
+    position: absolute;
+    inset: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.gs-particula {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--verde-lima);
+    animation: gs-explosion 0.8s ease-out forwards;
+}
+
+.gs-particula:nth-child(even) {
+    background-color: var(--azul-electrico);
+}
+
+@keyframes gs-explosion {
+    from {
+        opacity: 1;
+        transform: translate(0, 0) scale(1.3);
+    }
+
+    to {
+        opacity: 0;
+        transform: translate(var(--x), var(--y)) scale(0);
+    }
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.gs-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 44px;
+    width: min(1200px, calc(100% - 32px));
+    margin: 30px auto 60px;
+    padding: 48px;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    border-radius: 28px;
+    background-color: var(--blanco);
+    color: var(--negro-carbon);
+}
+
+.gs-presentacion {
+    min-width: 0;
+}
+
+.gs-etiqueta {
+    display: inline-block;
+    padding: 7px 12px;
+    border-radius: 20px;
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.gs-hero h1 {
+    margin: 22px 0;
+    color: var(--negro-carbon);
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    font-weight: 800;
+    line-height: 1.06;
+    letter-spacing: -2px;
+}
+
+.gs-hero h1 span {
+    display: block;
+    color: var(--azul-electrico);
+}
+
+.gs-presentacion p {
+    margin: 0 0 28px;
+    color: rgba(17, 24, 39, 0.75);
+    line-height: 1.7;
+}
+
+.gs-presentacion .gs-boton {
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+}
+
+.gs-presentacion .gs-boton:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+}
+
+.gs-carrusel {
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid rgba(17, 24, 39, 0.12);
+    border-radius: 24px;
+    background-color: var(--blanco);
+    box-shadow: 0 8px 22px rgba(17, 24, 39, 0.1);
+}
+
+.gs-slide[hidden] {
+    display: none !important;
+}
+
+.gs-slide {
+    animation: gs-aparecer 0.3s ease;
+}
+
+.gs-imagen {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    border-radius: 16px;
+    background-color: rgba(20, 85, 217, 0.05);
+}
+
+.gs-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gs-info {
+    min-height: 155px;
+    padding: 22px 8px 12px;
+}
+
+.gs-info > span {
+    color: var(--azul-electrico);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.gs-info h2 {
+    margin: 10px 0;
+    color: var(--negro-carbon);
+    font-size: clamp(1.3rem, 2.2vw, 1.65rem);
+}
+
+.gs-info p {
+    margin: 0;
+    color: rgba(17, 24, 39, 0.75);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.gs-controles {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px;
+    padding-top: 10px;
+}
+
+.gs-flecha {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--azul-electrico);
+    color: var(--verde-lima);
+    font-size: 22px;
+}
+
+.gs-flecha:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+}
+
+.gs-indicadores {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    min-width: 0;
+}
+
+.gs-indicador {
+    display: grid;
+    flex: 0 1 44px;
+    min-width: 0;
+    height: 44px;
+    place-items: center;
+    border: 0;
+    background-color: transparent;
+}
+
+.gs-indicador::before {
+    width: 8px;
+    height: 8px;
+    border-radius: 9px;
+    background-color: rgba(17, 24, 39, 0.3);
+    content: "";
+}
+
+.gs-indicador[aria-current="true"]::before {
+    width: 22px;
+    background-color: var(--azul-electrico);
+}
+
+.gs-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+@keyframes gs-aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =====================================================
+   CATEGORÍAS DEPORTIVAS
+===================================================== */
+
+.seccion-deportes {
+    padding: 75px 20px;
+    background-color: var(--gris-fondo);
+    text-align: center;
+}
+
+.seccion-deportes h2 {
+    margin-bottom: 35px;
+    color: var(--negro-carbon);
+    font-size: clamp(2rem, 4vw, 3rem);
+}
+
+#deportes-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.deporte {
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid var(--gris-suave);
+    border-radius: 15px;
+    background-color: var(--blanco);
+    box-shadow: 0 4px 12px rgba(17, 24, 39, 0.12);
+    cursor: pointer;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.deporte:hover {
+    border-color: var(--azul-electrico);
+    box-shadow: 0 8px 20px rgba(20, 85, 217, 0.18);
+    transform: translateY(-8px);
+}
+
+.deporte img {
+    width: 100%;
+    height: 180px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.deporte h3 {
+    margin-bottom: 10px;
+    color: var(--negro-carbon);
+}
+
+.deporte p {
+    margin: 0;
+    color: var(--gris-medio);
+}
+
+
+/* =====================================================
+   PRODUCTOS
+===================================================== */
+
+.seccion-productos {
+    padding: 80px 20px;
+    background-color: var(--blanco);
+}
+
+.seccion-productos h2 {
+    margin-bottom: 45px;
+    color: var(--negro-carbon);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+}
+
+#productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    min-height: 450px;
+    overflow: hidden;
+    border: 1px solid var(--gris-suave);
+    border-radius: 12px;
+    background-color: var(--blanco);
+    box-shadow: 0 5px 20px rgba(17, 24, 39, 0.1);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.producto:hover {
+    box-shadow: 0 10px 25px rgba(20, 85, 217, 0.18);
+    transform: translateY(-8px);
+}
+
+.producto img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.producto-info {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 22px;
+}
+
+.producto-info h3 {
+    margin-bottom: 10px;
+    color: var(--negro-carbon);
+}
+
+.producto-info p {
+    margin-bottom: 20px;
+    color: var(--gris-medio);
+    line-height: 1.5;
+}
+
+.producto-info span {
+    display: block;
+    margin-top: auto;
+    margin-bottom: 20px;
+    color: var(--azul-electrico);
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.producto-info button {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid var(--azul-electrico);
+    border-radius: 6px;
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+    font-weight: 700;
+}
+
+.producto-info button:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+}
+
+
+/* =====================================================
+   VISTA DE PRODUCTO
+===================================================== */
+
+.vista-producto {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+    background-color: rgba(17, 24, 39, 0.78);
+}
+
+.vista-producto.oculto {
+    display: none;
+}
+
+.vista-info {
+    position: relative;
+    width: min(500px, 100%);
+    padding: 30px;
+    border-radius: 16px;
+    background-color: var(--blanco);
+    text-align: center;
+}
+
+#imagen-grande {
+    width: min(400px, 100%);
+    height: 400px;
+    margin: 0 auto 20px;
+    border-radius: 10px;
+    object-fit: contain;
+}
+
+.cerrar-vista {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--negro-carbon);
+    color: var(--blanco);
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.cerrar-vista:hover {
+    background-color: var(--azul-electrico);
+}
+
+
+/* =====================================================
+   CARRITO
+===================================================== */
+
+.producto-carrito {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--gris-suave);
+}
+
+.producto-carrito img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.info-carrito {
+    flex: 1;
+}
+
+.info-carrito h4 {
+    margin: 0 0 5px;
+    color: var(--blanco);
+    font-size: 15px;
+}
+
+.info-carrito span {
+    color: var(--verde-lima);
+    font-weight: bold;
+}
+
+.eliminar {
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    background-color: var(--azul-electrico);
+    color: var(--blanco);
+    font-size: 12px;
+}
+
+.eliminar:hover {
+    background-color: var(--verde-lima);
+    color: var(--negro-carbon);
+}
+
+.total-carrito {
+    padding-top: 15px;
+    color: var(--verde-lima);
+    font-size: 18px;
+    font-weight: bold;
+    text-align: right;
+}
+
+
+/* =====================================================
+   BENEFICIOS
 ===================================================== */
 
 .seccion-beneficios {
     padding: 90px 20px;
     background-color: var(--blanco);
 }
-
-
-/* Encabezado */
 
 .encabezado-beneficios {
     max-width: 720px;
@@ -193,9 +982,6 @@ body {
     font-size: 1.05rem;
 }
 
-
-/* Tarjetas de beneficios */
-
 .tarjeta-beneficio {
     height: 100%;
     padding: 32px 24px;
@@ -215,9 +1001,6 @@ body {
     box-shadow: 0 15px 30px rgba(20, 85, 217, 0.16);
     transform: translateY(-8px);
 }
-
-
-/* Íconos */
 
 .icono-beneficio {
     display: flex;
@@ -248,13 +1031,13 @@ body {
 
 
 /* =====================================================
-   SECCIÓN DE MARCAS
+   MARCAS
 ===================================================== */
 
 .seccion-marcas {
     overflow: hidden;
     padding: 85px 20px;
-    background-color: #F8FAFC;
+    background-color: var(--gris-fondo);
 }
 
 .encabezado-marcas {
@@ -262,17 +1045,11 @@ body {
     margin: 0 auto 42px;
 }
 
-
-/* Carrusel */
-
 .carrusel-marcas {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-
-
-/* Degradado en los extremos */
 
 .carrusel-marcas::before,
 .carrusel-marcas::after {
@@ -289,7 +1066,7 @@ body {
     left: 0;
     background: linear-gradient(
         to right,
-        #F8FAFC,
+        var(--gris-fondo),
         rgba(248, 250, 252, 0)
     );
 }
@@ -298,13 +1075,10 @@ body {
     right: 0;
     background: linear-gradient(
         to left,
-        #F8FAFC,
+        var(--gris-fondo),
         rgba(248, 250, 252, 0)
     );
 }
-
-
-/* Pista animada */
 
 .pista-marcas {
     display: flex;
@@ -313,9 +1087,6 @@ body {
     gap: 24px;
     animation: desplazarMarcas 30s linear infinite;
 }
-
-
-/* Tarjetas de marcas */
 
 .marca-item {
     display: flex;
@@ -354,9 +1125,6 @@ body {
     transform: scale(1.06);
 }
 
-
-/* Movimiento continuo */
-
 @keyframes desplazarMarcas {
     from {
         transform: translateX(0);
@@ -367,28 +1135,13 @@ body {
     }
 }
 
-
-/* Pausar al colocar el cursor */
-
 .carrusel-marcas:hover .pista-marcas {
     animation-play-state: paused;
 }
 
 
-/* Respeto por usuarios que prefieren menos movimiento */
-
-@media (prefers-reduced-motion: reduce) {
-    .pista-marcas {
-        width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        animation: none;
-    }
-}
-
-
 /* =====================================================
-   SECCIÓN DE SUSCRIPCIÓN
+   SUSCRIPCIÓN
 ===================================================== */
 
 .seccion-suscripcion {
@@ -443,21 +1196,25 @@ body {
    FOOTER
 ===================================================== */
 
-
-/* Logo */
-
-.footer-logo {
-    display: inline-block;
-    margin-bottom: 18px;
+.footer-sport {
+    padding: 75px 20px 25px;
+    background: linear-gradient(
+        135deg,
+        var(--negro-carbon),
+        #1F2937
+    );
     color: var(--blanco);
-    font-size: 1.65rem;
-    font-weight: 900;
-    letter-spacing: 1px;
-    text-decoration: none;
 }
 
-.footer-logo span {
-    color: var(--verde-lima);
+.footer-logo-imagen {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.footer-logo-imagen img {
+    width: 165px;
+    height: auto;
+    object-fit: contain;
 }
 
 .footer-descripcion {
@@ -467,9 +1224,6 @@ body {
     font-size: 0.95rem;
     line-height: 1.7;
 }
-
-
-/* Redes sociales */
 
 .footer-redes {
     display: flex;
@@ -484,7 +1238,6 @@ body {
     height: 40px;
     border: 1px solid #4B5563;
     border-radius: 50%;
-    background-color: transparent;
     color: var(--blanco);
     font-size: 1.1rem;
     text-decoration: none;
@@ -502,9 +1255,6 @@ body {
     transform: translateY(-4px);
 }
 
-
-/* Títulos */
-
 .footer-titulo {
     margin-bottom: 20px;
     color: var(--blanco);
@@ -512,9 +1262,6 @@ body {
     font-weight: 800;
     letter-spacing: 0.5px;
 }
-
-
-/* Listas */
 
 .footer-lista {
     margin: 0;
@@ -540,18 +1287,12 @@ body {
     color: var(--verde-lima);
 }
 
-
-/* Texto del footer */
-
 .footer-texto {
     margin-bottom: 18px;
     color: #D1D5DB;
     font-size: 0.92rem;
     line-height: 1.6;
 }
-
-
-/* Métodos de pago */
 
 .metodos-pago {
     display: flex;
@@ -576,26 +1317,17 @@ body {
     font-size: 1rem;
 }
 
-
-/* Línea divisoria */
-
 .footer-linea {
     margin: 48px 0 22px;
     border-color: #4B5563;
     opacity: 1;
 }
 
-
-/* Copyright */
-
 .footer-copyright {
     margin: 0;
     color: #9CA3AF;
     font-size: 0.82rem;
 }
-
-
-/* Enlaces legales */
 
 .footer-legal {
     display: flex;
@@ -607,7 +1339,6 @@ body {
     color: #9CA3AF;
     font-size: 0.82rem;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
 .footer-legal a:hover {
@@ -616,10 +1347,72 @@ body {
 
 
 /* =====================================================
+   ACCESIBILIDAD
+===================================================== */
+
+:focus-visible {
+    outline: 3px solid var(--verde-lima);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .pista-marcas {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        animation: none;
+    }
+}
+
+
+/* =====================================================
    RESPONSIVE
 ===================================================== */
 
+@media (max-width: 900px) {
+    .gs-hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+
+    .gs-carrusel {
+        justify-self: center;
+        width: 100%;
+        max-width: 540px;
+    }
+
+    .menu-principal {
+        gap: 14px;
+    }
+
+    #deportes-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 767px) {
+    .site-nav {
+        min-height: 70px;
+    }
+
+    .logo-header img {
+        width: 130px;
+    }
+
+    .menu-principal {
+        display: none;
+    }
+
     .imagen-sorteo {
         min-height: 220px;
     }
@@ -656,8 +1449,45 @@ body {
     }
 }
 
-
 @media (max-width: 575px) {
+    .gs-oferta-contenido {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+        padding: 10px;
+    }
+
+    .gs-oferta-texto {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+
+    .gs-oferta.compacto .gs-rayo {
+        display: none;
+    }
+
+    .gs-oferta.compacto .gs-oferta-texto {
+        flex-basis: 100%;
+    }
+
+    .gs-oferta.compacto .gs-aprovechar {
+        padding: 8px 14px;
+    }
+
+    .gs-hero {
+        width: calc(100% - 20px);
+        margin-top: 20px;
+        padding: 22px 14px;
+    }
+
+    .gs-carrusel {
+        padding: 10px;
+    }
+
+    .gs-info {
+        min-height: 170px;
+    }
+
     .seccion-beneficios,
     .seccion-marcas {
         padding: 65px 15px;
@@ -669,6 +1499,10 @@ body {
 
     .tarjeta-beneficio {
         padding: 28px 22px;
+    }
+
+    #deportes-container {
+        grid-template-columns: 1fr;
     }
 
     .pista-marcas {
@@ -692,425 +1526,14 @@ body {
     .carrusel-marcas::after {
         width: 45px;
     }
-}
 
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* =========================
-   NAVEGACIÓN
-========================= */
-
-header {
-    background-color: #111;
-    color: white;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-nav {
-    max-width: 1200px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 20px;
-}
-
-.logo {
-    color: white;
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-}
-
-nav ul li a {
-    color: #A3E635;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    color: #1455D9;
-}
-
-#carrito {
-    border: none;
-    background: transparent;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-}
-
- 
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 80vh;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.55),
-            rgba(0, 0, 0, 0.55)
-        ),
-        url("../img/hero.jpg");
-    background-size: cover;
-    background-position: center;
-}
-
-.hero-contenido {
-    max-width: 1200px;
-    margin: auto;
-
-    padding: 40px;
-
-    color: #A3E635;
-}
-
-.hero-contenido p:first-child {
-    color: #1455D9;
-    font-weight: bold;
-}
-
-.hero h1 {
-    font-size: 64px;
-    margin: 20px 0;
-}
-
-.hero-contenido p {
-    max-width: 500px;
-    font-size: 18px;
-    line-height: 1.6;
-}
-
-
-/* =========================
-   BOTONES
-========================= */
-
-.btn {
-    display: inline-block;
-
-    margin-top: 30px;
-    padding: 15px 30px;
-
-    background-color: #1455D9;
-    color: #A3E635;
-
-    text-decoration: none;
-    font-weight: bold;
-
-    border-radius: 5px;
-
-    transition: transform 0.3s ease,
-                background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: #395897;
-    transform: translateY(-3px);
-}
-
-
-/* =========================
-   SECCIONES
-========================= */
-
-
-section h2 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 50px;
-}
-
-/* =========================
-   FOOTER   
-========================= */
-
-footer {
-    background-color: #111;
-    color: white;
-    text-align: center;
-    padding: 30px;
-}
-
-
-/* =========================
-   PARA QUE SEA RESPONSIVO
-========================= */
-
-@media (max-width: 768px) {
-
-    nav ul {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .servicios-container {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-/* =========================
-   TARJETAS DE PRODUCTOS
-========================= */
-
-
-#productos-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.producto {
-    background-color: white;
-    border-radius: 12px;
-    overflow: hidden;
-    width: 220px;
-    height: 450px;
-    
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.producto:hover {
-    transform: translateY(-8px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.producto img {
-    width: 100%;
-    height: 140px;
-
-    object-fit: cover;
-}
-
-.producto-info {
-    padding: 25px;
-}
-
-.producto-info h3 {
-    margin-bottom: 10px;
-}
-
-.producto-info p {
-    color: #666;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.producto-info span {
-    display: block;
-
-    font-size: 24px;
-    font-weight: bold;
-
-    margin-bottom: 20px;
-}
-
-.producto-info button {
-    width: 100%;
-
-    padding: 12px;
-
-    border: none;
-    border-radius: 5px;
-
-    background-color: #1455D9;
-    color: #A3E635;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    transition: background-color 0.3s ease;
-}
-
-.producto-info button:hover {
-    background-color: #1455D9;
-}
-
-
-/* =========================
-   Panel del carrito
-========================= */
-#contenido-carrito {
-    position: absolute;
-    right: 20px;
-    top: 70px;
-    width: 300px;
-    background: rgb(37, 36, 36);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-}
-
-.oculto {
-    display: none;
-}
-
-
-/* =========================
-      Tarjetas de deporte
-========================= */
-
-#deportes {
-    padding: 60px 20px;
-    text-align: center;
-}
-
-#deportes h2 {
-    margin-bottom: 30px;
-}
-
-#deportes-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.deporte {
-    padding: 30px 20px;
-    background: white;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.deporte:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.deporte h3 {
-    margin-bottom: 10px;
-}
-
-.deporte p {
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    #deportes-container {
-        grid-template-columns: repeat(2, 1fr);
+    #imagen-grande {
+        height: 280px;
     }
 }
 
-@media (max-width: 480px) {
-    #deportes-container {
-        grid-template-columns: 1fr;
+@media (hover: hover) {
+    .gs-imagen:hover img {
+        transform: scale(1.06);
     }
 }
-
-.deporte img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-
-
-/* =========================
-    TRAJETAS GRANDES
-========================= */
-
-.vista-info {
-    text-align: center;
-}
-
-#imagen-grande {
-    width: 400px;
-    height: 400px;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
-    border-radius: 10px;
-}
-
-/* =========================
-   ESTILOS DE LOS PRODUSCOT DEL CARRITO
-========================= */
-
-.producto-carrito {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.producto-carrito img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 8px;
-}
-
-.info-carrito {
-    flex: 1;
-}
-
-.info-carrito h4 {
-    margin: 0 0 5px;
-    font-size: 15px;
-}
-
-.info-carrito span {
-    font-weight: bold;
-}
-
-.eliminar {
-    border: none;
-    background: #1455D9;
-    color: #A3E635;
-    padding: 7px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 12px;
-    transition: background 0.3s;
-}
-
-.eliminar:hover {
-    background: #1455D9;
-}
-
-.total-carrito {
-    text-align: right;
-    font-size: 18px;
-    font-weight: bold;
-    padding-top: 15px;
-}
-
