@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
+   
 const productosContainer = document.getElementById("productos-container");
 const contadorCarrito = document.getElementById("contador-carrito");
 
