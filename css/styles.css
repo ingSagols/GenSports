@@ -830,8 +830,7 @@ a {
 /* =====================================================
    VISTA DE PRODUCTO
 ===================================================== */
-
-.vista-producto {
+   .vista-producto {
     position: fixed;
     inset: 0;
     z-index: 1100;
@@ -839,13 +838,13 @@ a {
     place-items: center;
     padding: 20px;
     background-color: rgba(17, 24, 39, 0.78);
-}
+} 
 
-.vista-producto.oculto {
+    .vista-producto.oculto {
     display: none;
 }
 
-.vista-info {
+ .vista-info {
     position: relative;
     width: min(500px, 100%);
     padding: 30px;
@@ -863,7 +862,6 @@ a {
 }
 
 .cerrar-vista {
-    position: absolute;
     top: 20px;
     right: 20px;
     z-index: 2;
@@ -879,7 +877,7 @@ a {
 
 .cerrar-vista:hover {
     background-color: var(--azul-electrico);
-}
+} 
 
 
 /* =====================================================
