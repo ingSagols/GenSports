@@ -15,6 +15,7 @@
 
     <!-- CSS personalizado -->
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/oferta-hero.css">
 </head>
 
 <body>
@@ -74,6 +75,142 @@
             </div>
         </div>
     </div>
+
+
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="#" class="logo">GenSports</a>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+            </ul>
+
+            <button id="carrito">
+                🛒 <span id="contador-carrito">0</span>
+            </button>
+        </nav>
+        <div id="contenido-carrito" class="oculto"></div>
+    </header>
+
+    <!-- Oferta sticky: fuera de main para acompañar el scroll de la página. -->
+    <aside id="contadorOferta" class="gs-oferta" aria-label="Oferta flash">
+        <div class="gs-oferta-contenido">
+            <div class="gs-oferta-texto"><span class="gs-rayo" aria-hidden="true">ϟ</span><div><span class="gs-oferta-titulo">OFERTA FLASH</span><strong>30% DE DESCUENTO</strong></div></div>
+            <div class="gs-reloj" role="timer" aria-label="Tiempo restante de la oferta">
+                <div><span id="horas">01</span><small>HRS</small></div><b>:</b>
+                <div><span id="minutos">30</span><small>MIN</small></div><b>:</b>
+                <div><span id="segundos">00</span><small>SEG</small></div>
+            </div>
+            <a class="gs-boton gs-aprovechar" href="#productos">Aprovechar</a>
+        </div>
+        <div class="gs-efectos" aria-hidden="true"></div>
+    </aside>
+
+
+
+    <!-- Hero -->
+    <main>
+
+        <section id="inicio" class="gs-hero" aria-labelledby="gs-titulo">
+    <div class="gs-presentacion">
+        <span class="gs-etiqueta">EQUÍPATE PARA TU PRÓXIMO RETO</span>
+        <h1 id="gs-titulo">Muévete a <span>tu manera.</span></h1>
+        <p>Encuentra el equipo que te acompaña en cada partido, entrenamiento y kilómetro.</p>
+        <a class="gs-boton" href="#productos">Explorar productos →</a>
+    </div>
+    <div class="gs-carrusel" role="region" aria-roledescription="carrusel" aria-label="Productos deportivos">
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 5: Fútbol" >
+            <div class="gs-imagen"><img src="./img/futbol.jpg" alt="Fútbol" ></div>
+            <div class="gs-info"><span>FÚTBOL</span><h2>Domina la cancha</h2><p>Prepárate para darlo todo en cada partido.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 5: Básquetbol" hidden>
+            <div class="gs-imagen"><img src="./img/basquetbol.jpg" alt="Básquetbol" loading="lazy"></div>
+            <div class="gs-info"><span>BÁSQUETBOL</span><h2>Haz que cada tiro cuente</h2><p>Da tu mejor juego en la cancha.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="3 de 5: Fútbol americano" hidden>
+            <div class="gs-imagen"><img src="./img/americano.jpg" alt="Fútbol americano" loading="lazy"></div>
+            <div class="gs-info"><span>FÚTBOL AMERICANO</span><h2>Avanza en cada jugada</h2><p>Pasión y energía hasta la última yarda.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="4 de 5: Running" hidden>
+            <div class="gs-imagen"><img src="./img/running.jpg" alt="Running" loading="lazy"></div>
+            <div class="gs-info"><span>RUNNING</span><h2>Encuentra tu ritmo</h2><p>Cada kilómetro empieza con un primer paso.</p></div>
+        </article>
+        <article class="gs-slide" role="group" aria-roledescription="diapositiva" aria-label="5 de 5: Calzado deportivo" hidden>
+            <div class="gs-imagen"><img src="./img/tenis.jpg" alt="Calzado deportivo" loading="lazy"></div>
+            <div class="gs-info"><span>CALZADO DEPORTIVO</span><h2>Prepárate para tu próximo reto</h2><p>Encuentra el calzado para tus entrenamientos.</p></div>
+        </article>
+        <div class="gs-controles">
+            <button class="gs-flecha" type="button" data-gs-anterior aria-label="Producto anterior">←</button>
+            <div class="gs-indicadores" role="group" aria-label="Elegir producto">
+                <button type="button" class="gs-indicador" aria-label="Mostrar Fútbol" aria-current="true"></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Básquetbol" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Fútbol americano" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Running" ></button>
+                <button type="button" class="gs-indicador" aria-label="Mostrar Calzado deportivo" ></button>
+            </div>
+            <button class="gs-flecha" type="button" data-gs-siguiente aria-label="Producto siguiente">→</button>
+        </div>
+        <p class="gs-sr" data-gs-estado aria-live="polite" aria-atomic="true"></p>
+    </div>
+</section>
+
+        <!-- Deposrtes -->
+        <section id="deportes">
+            <h2>Encuentra tu deporte</h2>
+
+            <div id="deportes-container">
+
+                <article class="deporte" data-deporte="Running">
+                    <img src="img/running.jpg" alt="Running">
+                    <h3>Running</h3>
+                    <p>Todo para tus carreras.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Fútbol">
+                    <img src="img/futbol.jpg" alt="Fútbol">
+                    <h3>Fútbol</h3>
+                    <p>Equípate para la cancha.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Básquetbol">
+                    <img src="img/basquetbol.jpg" alt="Básquetbol">
+                    <h3>Básquetbol</h3>
+                    <p>Domina la cancha.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Americano">
+                    <img src="img/americano.jpg" alt="Americano">
+                    <h3>Americano</h3>
+                    <p>Prepárate para el juego.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Nueva ventana de productos -->
+        <div id="vista-producto" class="vista-producto oculto">
+            <div id="cerrar-vista" class="cerrar-vista">&times;</div>
+
+            <div class="vista-info">
+                <img id="imagen-grande" src="" alt="">
+                <h2 id="nombre-grande"></h2>
+                <p id="precio-grande"></p>
+            </div>
+        </div>
+
+        <!-- Productos -->
+        <section id="productos">
+
+            <h2>Productos destacados</h2>
+
+            <div id="productos-container">
+
+            </div>
+
+        </section>
 
     <!-- Sección de beneficios -->
     <section id="beneficios" class="seccion-beneficios">
@@ -291,6 +428,7 @@
         </div>
     </section>
 
+    </main>
     <!-- Footer -->
     <footer id="footer" class="footer-sport">
         <div class="container">
@@ -443,7 +581,11 @@
     </script>
 
     <script src="./js/main.js"></script>
+    <script src="./js/oferta-hero.js"></script>
 
 </body>
 
 </html>
+
+
+
