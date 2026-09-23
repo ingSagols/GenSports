@@ -75,6 +75,107 @@
         </div>
     </div>
 
+
+    <!-- Navegación -->
+    <header>
+        <nav>
+            <a href="#" class="logo">GenSports</a>
+
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+            </ul>
+
+            <button id="carrito">
+                🛒 <span id="contador-carrito">0</span>
+            </button>
+        </nav>
+        <div id="contenido-carrito" class="oculto"></div>
+    </header>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-contenido">
+
+                <p>ENTRENA. SUPERA. CONQUISTA.</p>
+
+                <h1>
+                    No Human is Limited
+                </h1>
+
+                <p>
+                    Encuentra el equipamiento que necesitas
+                    para llevar tu rendimiento al siguiente nivel.
+                </p>
+
+                <a href="#productos" class="btn">
+                    Ver productos
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Deposrtes -->
+        <section id="deportes">
+            <h2>Encuentra tu deporte</h2>
+
+            <div id="deportes-container">
+
+                <article class="deporte" data-deporte="Running">
+                    <img src="img/running.jpg" alt="Running">
+                    <h3>Running</h3>
+                    <p>Todo para tus carreras.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Fútbol">
+                    <img src="img/futbol.jpg" alt="Fútbol">
+                    <h3>Fútbol</h3>
+                    <p>Equípate para la cancha.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Básquetbol">
+                    <img src="img/basquetbol.jpg" alt="Básquetbol">
+                    <h3>Básquetbol</h3>
+                    <p>Domina la cancha.</p>
+                </article>
+
+                <article class="deporte" data-deporte="Americano">
+                    <img src="img/americano.jpg" alt="Americano">
+                    <h3>Americano</h3>
+                    <p>Prepárate para el juego.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!---Nueva ventana de productos--->>
+        <div id="vista-producto" class="vista-producto oculto">
+            <div id="cerrar-vista" class="cerrar-vista">&times;</div>
+
+            <div class="vista-info">
+                <img id="imagen-grande" src="" alt="">
+                <h2 id="nombre-grande"></h2>
+                <p id="precio-grande"></p>
+            </div>
+        </div>
+
+        <!-- Productos -->
+        <section id="productos">
+
+            <h2>Productos destacados</h2>
+
+            <div id="productos-container">
+
+            </div>
+
+        </section>
+
     <!-- Sección de beneficios -->
     <section id="beneficios" class="seccion-beneficios">
         <div class="container">
@@ -447,3 +548,6 @@
 </body>
 
 </html>
+
+
+
