@@ -81,40 +81,40 @@ const disciplinas = document.querySelectorAll(".deporte");
 
 const productos = [
     // Running
-    { nombre: "Tenis deportivos", precio: 1299, imagen: "img/tenis.jpg", deporte: "Running" },
-    { nombre: "Playera deportiva", precio: 599, imagen: "img/playera.jpg", deporte: "Running" },
-    { nombre: "Short para correr", precio: 499, imagen: "img/short-running.jpg", deporte: "Running" },
-    { nombre: "Sudadera deportiva", precio: 899, imagen: "img/sudadera-running.jpg", deporte: "Running" },
-    { nombre: "Calcetas deportivas", precio: 249, imagen: "img/calcetas-running.jpg", deporte: "Running" },
-    { nombre: "Gorra deportiva", precio: 399, imagen: "img/gorra-running.jpg", deporte: "Running" },
-    { nombre: "Cangurera deportiva", precio: 449, imagen: "img/cangurera.jpg", deporte: "Running" },
+    { nombre: "Tenis deportivos", precio: 1299, imagen: "img/productos/tenis.jpg", deporte: "Running" },
+    { nombre: "Playera deportiva", precio: 599, imagen: "img/productos/playera.jpg", deporte: "Running" },
+    { nombre: "Short para correr", precio: 499, imagen: "img/productos/short-running.jpg", deporte: "Running" },
+    { nombre: "Sudadera deportiva", precio: 899, imagen: "img/productos/sudadera-running.jpg", deporte: "Running" },
+    { nombre: "Calcetas deportivas", precio: 249, imagen: "img/productos/calcetas-running.jpg", deporte: "Running" },
+    { nombre: "Gorra deportiva", precio: 399, imagen: "img/productos/gorra-running.jpg", deporte: "Running" },
+    { nombre: "Cangurera deportiva", precio: 449, imagen: "img/productos/cangurera.jpg", deporte: "Running" },
 
     // Fútbol
-    { nombre: "Balón de fútbol", precio: 799, imagen: "img/balon-futbol.jpg", deporte: "Fútbol" },
-    { nombre: "Jersey de fútbol", precio: 999, imagen: "img/jersey-futbol.jpg", deporte: "Fútbol" },
-    { nombre: "Short de fútbol", precio: 499, imagen: "img/short-futbol.jpg", deporte: "Fútbol" },
-    { nombre: "Tacos de fútbol", precio: 1499, imagen: "img/tacos-futbol.jpg", deporte: "Fútbol" },
-    { nombre: "Espinilleras", precio: 299, imagen: "img/espinilleras.jpg", deporte: "Fútbol" },
-    { nombre: "Guantes de portero", precio: 899, imagen: "img/guantes-portero.jpg", deporte: "Fútbol" },
-    { nombre: "Mochila de fútbol", precio: 699, imagen: "img/mochila-futbol.jpg", deporte: "Fútbol" },
+    { nombre: "Balón de fútbol", precio: 799, imagen: "img/productos/balon.jpg", deporte: "Fútbol" },
+    { nombre: "Jersey de fútbol", precio: 999, imagen: "img/productos/jersey-futbol.jpg", deporte: "Fútbol" },
+    { nombre: "Short de fútbol", precio: 499, imagen: "img/productos/short-futbol.jpg", deporte: "Fútbol" },
+    { nombre: "Tacos de fútbol", precio: 1499, imagen: "img/productos/tacos-futbol.jpg", deporte: "Fútbol" },
+    { nombre: "Espinilleras", precio: 299, imagen: "img/productos/espinilleras.jpg", deporte: "Fútbol" },
+    { nombre: "Guantes de portero", precio: 899, imagen: "img/productos/guantes-portero.jpg", deporte: "Fútbol" },
+    { nombre: "Mochila de fútbol", precio: 699, imagen: "img/productos/mochila-futbol.jpg", deporte: "Fútbol" },
 
     // Básquetbol
-    { nombre: "Balón de básquetbol", precio: 849, imagen: "img/balon-basquetbol.jpg", deporte: "Básquetbol" },
-    { nombre: "Jersey de básquetbol", precio: 899, imagen: "img/jersey-basquetbol.jpg", deporte: "Básquetbol" },
-    { nombre: "Short de básquetbol", precio: 499, imagen: "img/short-basquetbol.jpg", deporte: "Básquetbol" },
-    { nombre: "Tenis de básquetbol", precio: 1799, imagen: "img/tenis-basquetbol.jpg", deporte: "Básquetbol" },
-    { nombre: "Muñequeras deportivas", precio: 249, imagen: "img/munequeras.jpg", deporte: "Básquetbol" },
-    { nombre: "Rodilleras deportivas", precio: 399, imagen: "img/rodilleras.jpg", deporte: "Básquetbol" },
-    { nombre: "Mochila de básquetbol", precio: 749, imagen: "img/mochila-basquetbol.jpg", deporte: "Básquetbol" },
+    { nombre: "Balón de básquetbol", precio: 849, imagen: "img/productos/balon-basquetbol.jpg", deporte: "Básquetbol" },
+    { nombre: "Jersey de básquetbol", precio: 899, imagen: "img/productos/jersey-basquetbol.jpg", deporte: "Básquetbol" },
+    { nombre: "Short de básquetbol", precio: 499, imagen: "img/productos/short-basquetbol.jpg", deporte: "Básquetbol" },
+    { nombre: "Tenis de básquetbol", precio: 1799, imagen: "img/productos/tenis-basquetbol.jpg", deporte: "Básquetbol" },
+    { nombre: "Muñequeras deportivas", precio: 249, imagen: "img/productos/munequeras.jpg", deporte: "Básquetbol" },
+    { nombre: "Rodilleras deportivas", precio: 399, imagen: "img/productos/rodilleras.jpg", deporte: "Básquetbol" },
+    { nombre: "Mochila de básquetbol", precio: 749, imagen: "img/productos/mochila-basquetbol.jpg", deporte: "Básquetbol" },
 
     // Americano
-    { nombre: "Balón americano", precio: 899, imagen: "img/balon-americano.jpg", deporte: "Americano" },
-    { nombre: "Jersey americano", precio: 1299, imagen: "img/jersey-americano.jpg", deporte: "Americano" },
-    { nombre: "Pants deportivos", precio: 799, imagen: "img/pants-americano.jpg", deporte: "Americano" },
-    { nombre: "Casco americano", precio: 2499, imagen: "img/casco-americano.jpg", deporte: "Americano" },
-    { nombre: "Guantes americanos", precio: 699, imagen: "img/guantes-americano.jpg", deporte: "Americano" },
-    { nombre: "Hombreras deportivas", precio: 1899, imagen: "img/hombreras.jpg", deporte: "Americano" },
-    { nombre: "Mochila deportiva", precio: 749, imagen: "img/mochila-americano.jpg", deporte: "Americano" }
+    { nombre: "Balón americano", precio: 899, imagen: "img/productos/balon-americano.jpg", deporte: "Americano" },
+    { nombre: "Jersey americano", precio: 1299, imagen: "img/productos/jersey-americano.jpg", deporte: "Americano" },
+    { nombre: "Pants deportivos", precio: 799, imagen: "img/productos/pants-americano.jpg", deporte: "Americano" },
+    { nombre: "Casco americano", precio: 2499, imagen: "img/productos/casco-americano.jpg", deporte: "Americano" },
+    { nombre: "Guantes americanos", precio: 699, imagen: "img/productos/guantes-americano.jpg", deporte: "Americano" },
+    { nombre: "Hombreras deportivas", precio: 1899, imagen: "img/productos/hombreras.jpg", deporte: "Americano" },
+    { nombre: "Mochila deportiva", precio: 749, imagen: "img/productos/mochila-americano.jpg", deporte: "Americano" }
 ];
 
 
