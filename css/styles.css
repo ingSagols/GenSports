@@ -694,9 +694,6 @@ body {
     }
 }
 
-/* =========================
-   CONFIGURACIÓN GENERAL
-========================= */
 
 * {
     margin: 0;
@@ -706,7 +703,6 @@ body {
 
 /* =========================
    NAVEGACIÓN
-========================= */
 
 header {
     background-color: #111;
@@ -760,7 +756,6 @@ nav ul li a:hover {
  
 /* =========================
    HERO
-========================= */
 
 .hero {
     min-height: 80vh;
@@ -805,7 +800,6 @@ nav ul li a:hover {
 
 /* =========================
    BOTONES
-========================= */
 
 .btn {
     display: inline-block;
@@ -833,7 +827,6 @@ nav ul li a:hover {
 
 /* =========================
    SECCIONES
-========================= */
 
 
 section h2 {
@@ -844,7 +837,6 @@ section h2 {
 
 /* =========================
    FOOTER
-========================= */
 
 footer {
     background-color: #111;
@@ -856,7 +848,6 @@ footer {
 
 /* =========================
    PARA QUE SEA RESPONSIVO
-========================= */
 
 @media (max-width: 768px) {
 
@@ -876,7 +867,6 @@ footer {
 
 /* =========================
    TARJETAS DE PRODUCTOS
-========================= */
 
 
 #productos-container {
@@ -960,7 +950,6 @@ footer {
 
 /* =========================
    Panel del carrito
-========================= */
 #contenido-carrito {
     position: absolute;
     right: 20px;
@@ -980,7 +969,6 @@ footer {
 
 /* =========================
       Tarjetas de deporte
-========================= */
 
 #deportes {
     padding: 60px 20px;
@@ -1045,7 +1033,6 @@ footer {
 
 /* =========================
     TRAJETAS GRANDES
-========================= */
 
 .vista-info {
     text-align: center;
@@ -1062,7 +1049,6 @@ footer {
 
 /* =========================
    ESTILOS DE LOS PRODUSCOT DEL CARRITO
-========================= */
 
 .producto-carrito {
     display: flex;
@@ -1113,3 +1099,7 @@ footer {
     font-weight: bold;
     padding-top: 15px;
 }
+
+
+
+
